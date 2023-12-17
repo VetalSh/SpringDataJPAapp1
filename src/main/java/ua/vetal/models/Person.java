@@ -2,6 +2,7 @@ package ua.vetal.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Person")
@@ -29,6 +30,9 @@ public class Person {
   @Pattern(regexp = "[A-Z]\\w+, [A-Z]\\w+, \\d{6}", message = "Your address should be in this format: Country, City, Postal Code (6 digits)")
   @Column(name = "address")
   private String address;
+
+  @OneToMany(mappedBy = "owner")
+  private List<Item> items;
 
   public Person() {
   }
