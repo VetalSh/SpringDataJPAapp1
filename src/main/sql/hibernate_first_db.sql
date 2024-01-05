@@ -16,3 +16,7 @@ ALTER TABLE Person ADD COLUMN created_at TIMESTAMP;
 ALTER TABLE Person ADD COLUMN mood int;
 ALTER TABLE Person DROP COLUMN mood;
 ALTER TABLE Person ADD COLUMN mood varchar;
+
+INSERT INTO Item(person_id, item_name) VALUES(7, 'IPhone');
+INSERT INTO Item(person_id, item_name) VALUES(7, 'Book');
+INSERT INTO Item(person_id, item_name) VALUES(7, 'Kindle');
