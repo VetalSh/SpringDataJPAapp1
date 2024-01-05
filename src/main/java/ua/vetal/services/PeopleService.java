@@ -3,6 +3,7 @@ package ua.vetal.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ua.vetal.models.Mood;
 import ua.vetal.models.Person;
 import ua.vetal.repositories.PeopleRepository;
 
@@ -32,6 +33,7 @@ public class PeopleService {
   @Transactional
   public void save(Person person) {
     person.setCreatedAt(new Date());
+    person.setMood(Mood.CALM);
     peopleRepository.save(person);
   }
 
